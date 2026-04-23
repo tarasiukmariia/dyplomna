@@ -1,6 +1,6 @@
 const Footer = () => (
-  <footer className="bg-gray-50 border-t border-gray-200 py-4 text-center text-gray-500 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
-    © {new Date().getFullYear()} MyBlog. Всі права захищено.
+  <footer className="bg-gray-50 border-t border-[#b87333] py-4 text-center text-[#b87333] text-sm dark:bg-[#23272a] dark:border-[#b87333] dark:text-[#b87333]">
+    © {new Date().getFullYear()} MyBlog.
   </footer>
 );
 
