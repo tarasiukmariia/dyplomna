@@ -2,16 +2,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #b87333;
-  --color-primary-hover: #a05a2c;
-  --color-primary-light: #cd7f32;
-  --color-primary-hover-light: #b8733320;
+  --color-primary: #A48F7A;
+  --color-primary-hover: #8c7a67;
+  --color-primary-light: #c2b09a;
+  --color-primary-hover-light: #ede6de;
 
   --color-surface: #f9fafb;
   --color-surface-dark: #101010;
 
-  --color-border: #b87333;
-  --color-border-dark: #b87333;
+  --color-border: #A48F7A;
+  --color-border-dark: #8c7a67;
 
   --color-text: #1a202c;
   --color-text-light: #f3f4f6;
@@ -20,8 +20,8 @@
 
   --color-bg-input: #fff;
   --color-bg-input-dark: #101010;
-  --color-border-input: #d1d5db;
-  --color-border-input-dark: #b87333;
+  --color-border-input: #c2b09a;
+  --color-border-input-dark: #A48F7A;
 
   --color-success: #22c55e;
   --color-error: #ef4444;

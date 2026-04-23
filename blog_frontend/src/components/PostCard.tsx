@@ -17,14 +17,14 @@ const PostCard: React.FC<PostCardProps> = ({ title, excerpt, author, href, class
   return (
     <Wrapper
       {...wrapperProps}
-      className={`block p-6 bg-surface border border-border rounded-2xl shadow-lg transition-transform hover:scale-[1.02] hover:border-primary dark:bg-surface-dark dark:border-border-dark dark:hover:border-primary ${className}`}
-      style={href ? { textDecoration: 'none' } : {}}
+      className={`block p-6 bg-surface shadow-xl transition-transform hover:scale-[1.03] hover:shadow-2xl dark:bg-surface-dark ${className}`}
+      style={{ borderRadius: '8px', ...(href ? { textDecoration: 'none' } : {}) }}
     >
       {imageUrl && (
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-48 object-cover rounded-xl mb-4"
+          className="w-full h-48 object-cover mb-4" style={{ borderRadius: '6px' }}
         />
       )}
       <h3 className="text-2xl font-bold text-primary mb-2 dark:text-primary">{title}</h3>
