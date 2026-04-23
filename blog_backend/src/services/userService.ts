@@ -7,8 +7,16 @@ export class UserService {
 
   async updateUser(
     userId: string,
-    updateData: Partial<{ name: string; email: string; password: string }>
+    updateData: Partial<{
+      username: string;
+      email: string;
+      password: string;
+      role: "admin" | "writer" | "reader";
+    }>
   ) {
+    if (updateData.role) {
+      delete updateData.role;
+    }
     return await User.findByIdAndUpdate(userId, updateData, { new: true });
   }
 

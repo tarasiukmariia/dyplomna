@@ -6,11 +6,12 @@ class AuthController {
 
   async register(req: Request, res: Response) {
     try {
-      const { username, email, password } = req.body;
+      const { username, email, password, role } = req.body;
       const user = await this.userService.registerUser(
         username,
         email,
-        password
+        password,
+        role
       );
       res.status(201).json({ message: "User registered successfully", user });
     } catch (error) {
@@ -25,8 +26,8 @@ class AuthController {
   async login(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
-      const token = await this.userService.loginUser(email, password);
-      res.status(200).json({ message: "Login successful", token });
+      const { token, role } = await this.userService.loginUser(email, password);
+      res.status(200).json({ message: "Login successful", token, role });
     } catch (error) {
       if (error instanceof Error) {
         res.status(500).json({ message: error.message });

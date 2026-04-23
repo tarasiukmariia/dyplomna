@@ -8,14 +8,18 @@ export class AuthService {
   async registerUser(
     username: string,
     email: string,
-    password: string
+    password: string,
+    role: "admin" | "writer" | "reader" = "reader"
   ): Promise<IUser> {
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ username, email, password: hashedPassword });
+    const user = new User({ username, email, password: hashedPassword, role });
     return await user.save();
   }
 
-  async loginUser(email: string, password: string): Promise<string> {
+  async loginUser(
+    email: string,
+    password: string
+  ): Promise<{ token: string; role: string }> {
     const user = await User.findOne({ email });
     if (!user) {
       throw new Error("Invalid email or password");
@@ -26,9 +30,11 @@ export class AuthService {
       throw new Error("Invalid email or password");
     }
 
-    const token = jwt.sign({ id: user._id, email: user.email }, SECRET_KEY, {
-      expiresIn: "1h",
-    });
-    return token;
+    const token = jwt.sign(
+      { id: user._id, email: user.email, role: user.role },
+      SECRET_KEY,
+      { expiresIn: "1d" }
+    );
+    return { token, role: user.role };
   }
 }
