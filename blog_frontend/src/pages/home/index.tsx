@@ -31,9 +31,9 @@ const HomePage = () => {
   return (
     <MainLayout>
       <div className="max-w-3xl mx-auto p-4">
-        <h1 className="text-4xl font-extrabold mb-8 text-accent text-center drop-shadow dark:text-accent">Блог візажиста</h1>
+        <h1 className="text-4xl font-extrabold mb-8 text-primary text-center drop-shadow dark:text-primary">Блог візажиста</h1>
         <Card className="mb-8">
-          <h2 className="text-xl font-bold mb-4 text-accent">UI Components Showcase</h2>
+          <h2 className="text-xl font-bold mb-4 text-primary">UI Components Showcase</h2>
           <div className="flex flex-wrap gap-4 mb-4">
             <Button>Primary</Button>
             <Button variant="secondary">Secondary</Button>
@@ -69,15 +69,15 @@ const HomePage = () => {
           {posts.map((post) => (
             <div
               key={post.slug}
-              className="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-lg transition-transform hover:scale-[1.02] dark:bg-surface-dark dark:border-accent"
+              className="p-6 bg-surface border border-border rounded-2xl shadow-lg transition-transform hover:scale-[1.02] dark:bg-surface-dark dark:border-border-dark"
             >
               <Link
                 to={`/post/${post.slug}`}
-                className="text-2xl font-bold text-accent hover:text-accent-hover transition-colors duration-200 dark:text-accent dark:hover:text-accent-light"
+                className="text-2xl font-bold text-primary hover:text-primary-hover transition-colors duration-200 dark:text-primary dark:hover:text-primary-light"
               >
                 {post.title}
               </Link>
-              <p className="text-gray-600 mt-2 dark:text-gray-400">{post.excerpt}</p>
+              <p className="text-text-muted mt-2 dark:text-text-muted-dark">{post.excerpt}</p>
             </div>
           ))}
         </div>

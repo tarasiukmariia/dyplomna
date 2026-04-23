@@ -7,10 +7,10 @@ interface BadgeProps {
 }
 
 const colorMap = {
-  accent: 'bg-accent text-white',
-  success: 'bg-green-500 text-white',
-  error: 'bg-red-500 text-white',
-  default: 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100',
+  accent: 'bg-primary text-text-light',
+  success: 'bg-success text-text-light',
+  error: 'bg-error text-text-light',
+  default: 'bg-border text-text dark:bg-border-dark dark:text-text-light',
 };
 
 const Badge: React.FC<BadgeProps> = ({ children, color = 'accent', className = '' }) => (

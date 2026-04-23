@@ -7,10 +7,10 @@ interface ChipProps {
 }
 
 const colorMap = {
-  default: 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100',
-  accent: 'bg-accent text-white dark:bg-accent dark:text-white',
-  success: 'bg-green-500 text-white',
-  error: 'bg-red-500 text-white',
+  default: 'bg-border text-text dark:bg-border-dark dark:text-text-light',
+  accent: 'bg-primary text-text-light dark:bg-primary dark:text-text-light',
+  success: 'bg-success text-text-light',
+  error: 'bg-error text-text-light',
 };
 
 const Chip: React.FC<ChipProps> = ({ label, color = 'default', onDelete }) => (
@@ -19,7 +19,7 @@ const Chip: React.FC<ChipProps> = ({ label, color = 'default', onDelete }) => (
     {onDelete && (
       <button
         onClick={onDelete}
-        className="cursor-pointer ml-2 text-lg leading-none focus:outline-none hover:text-red-600"
+        className="cursor-pointer ml-2 text-lg leading-none focus:outline-none hover:text-error"
         aria-label="Видалити чіп"
         type="button"
       >

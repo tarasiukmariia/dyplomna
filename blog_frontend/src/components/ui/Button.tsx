@@ -10,13 +10,13 @@ const base =
 
 const variants = {
   primary:
-    'bg-accent text-white hover:bg-accent-hover focus:ring-accent dark:bg-accent dark:hover:bg-accent-light dark:focus:ring-accent',
+    'bg-primary text-text-light hover:bg-primary-hover focus:ring-primary dark:bg-primary dark:hover:bg-primary-light dark:focus:ring-primary',
   secondary:
-    'bg-gray-200 text-accent hover:bg-gray-300 focus:ring-accent dark:bg-gray-700 dark:text-accent dark:hover:bg-gray-600',
+    'bg-border text-primary hover:bg-border-input focus:ring-primary dark:bg-border-dark dark:text-primary dark:hover:bg-border-input-dark',
   outline:
-    'border border-accent text-accent bg-transparent hover:bg-accent hover:text-white focus:ring-accent dark:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-white',
+    'border border-primary text-primary bg-transparent hover:bg-primary hover:text-text-light focus:ring-primary dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-text-light',
   ghost:
-    'bg-transparent text-accent hover:bg-accent-hover-light focus:ring-accent dark:text-accent dark:hover:bg-accent-hover-light'
+    'bg-transparent text-primary hover:bg-primary-hover-light focus:ring-primary dark:text-primary dark:hover:bg-primary-hover-light'
 };
 
 const Button: React.FC<ButtonProps> = ({ variant = 'primary', children, className = '', disabled, ...props }) => (

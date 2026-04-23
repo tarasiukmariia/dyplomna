@@ -5,7 +5,7 @@ interface LoaderProps {
   color?: string;
 }
 
-const Loader: React.FC<LoaderProps> = ({ size = 32, color = '#b87333' }) => (
+const Loader: React.FC<LoaderProps> = ({ size = 32, color }) => (
   <svg
     className="animate-spin mx-auto"
     width={size}
@@ -18,7 +18,7 @@ const Loader: React.FC<LoaderProps> = ({ size = 32, color = '#b87333' }) => (
       cy="25"
       r="20"
       fill="none"
-      stroke={color}
+      stroke={color || 'var(--color-primary)'}
       strokeWidth="5"
       strokeDasharray="31.4 31.4"
       strokeLinecap="round"

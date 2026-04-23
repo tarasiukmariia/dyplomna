@@ -7,12 +7,12 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const TextField: React.FC<TextFieldProps> = ({ label, error, className = '', ...props }) => (
   <div className="mb-4">
-    {label && <label className="block mb-1 font-medium text-accent dark:text-accent">{label}</label>}
+    {label && <label className="block mb-1 font-medium text-primary dark:text-primary">{label}</label>}
     <input
-      className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-white dark:bg-surface-dark border-gray-300 dark:border-accent text-gray-900 dark:text-gray-100 ${error ? 'border-red-500' : ''} ${className}`}
+      className={`w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary bg-bg-input dark:bg-bg-input-dark border-border-input dark:border-border-input-dark text-text dark:text-text-light ${error ? 'border-error' : ''} ${className}`}
       {...props}
     />
-    {error && <div className="text-red-500 text-xs mt-1">{error}</div>}
+    {error && <div className="text-error text-xs mt-1">{error}</div>}
   </div>
 );
 
