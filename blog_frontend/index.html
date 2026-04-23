@@ -7,6 +7,15 @@
     <title>Blog</title>
   </head>
   <body>
+    <script>
+      // Додає клас dark до body до першого рендеру, якщо вибрана темна тема
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') {
+          document.body.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
