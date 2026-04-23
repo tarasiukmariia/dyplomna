@@ -36,7 +36,6 @@ const HomePage = () => {
           <h2 className="text-xl font-bold mb-4 text-primary">UI Components Showcase</h2>
           <div className="flex flex-wrap gap-4 mb-4">
             <Button>Primary</Button>
-            <Button variant="secondary">Secondary</Button>
             <Button variant="outline">Outline</Button>
             <Button variant="ghost">Ghost</Button>
             <Button disabled>Disabled</Button>
@@ -47,7 +46,6 @@ const HomePage = () => {
           </div>
           <div className="flex flex-wrap gap-4 mb-4 items-center">
             {chipVisible && <Chip label="Chip Accent" color="accent" onDelete={() => setChipVisible(false)} />}
-            <Chip label="Chip Default" />
             <Chip label="Chip Success" color="success" />
             <Chip label="Chip Error" color="error" />
           </div>
@@ -55,7 +53,6 @@ const HomePage = () => {
             <Badge color="accent">Accent</Badge>
             <Badge color="success">Success</Badge>
             <Badge color="error">Error</Badge>
-            <Badge color="default">Default</Badge>
           </div>
           <div className="flex flex-wrap gap-4 mb-4 items-center">
             <Switch checked={switchOn} onChange={setSwitchOn} label={switchOn ? "Увімкнено" : "Вимкнено"} />
