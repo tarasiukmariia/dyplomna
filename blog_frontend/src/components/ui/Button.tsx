@@ -33,7 +33,6 @@ const Button: React.FC<ButtonProps> = ({
     style={{ outline: "none", boxShadow: "none" }}
     {...props}
   >
-    {/* Animated background for primary/outline, animated border for ghost */}
     {variant === "ghost" ? (
       <span
         className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full transition-all duration-500 z-0 bg-primary"

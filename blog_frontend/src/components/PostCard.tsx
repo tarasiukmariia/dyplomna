@@ -25,11 +25,14 @@ const PostCard: React.FC<PostCardProps> = ({ title, excerpt, author, href, class
       }}
     >
       {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={title}
-          className="w-full h-48 object-cover mb-4" style={{ borderRadius: '6px' }}
-        />
+        <div className="-m-6 mb-4">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="w-full h-48 object-cover rounded-t-[8px]"
+            style={{ display: 'block' }}
+          />
+        </div>
       )}
       <h3 className="text-2xl font-bold text-primary mb-2 dark:text-primary">{title}</h3>
       {author && <div className="mb-2 text-sm text-text-muted dark:text-text-muted-dark">Автор: {author}</div>}

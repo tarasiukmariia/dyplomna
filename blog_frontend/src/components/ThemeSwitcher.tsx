@@ -30,7 +30,7 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <button
       onClick={() => setIsDark((v) => !v)}
-      className="cursor-pointer ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 transition-colors shadow"
+      className="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 transition-colors shadow"
       aria-label="Перемкнути тему"
       type="button"
     >
