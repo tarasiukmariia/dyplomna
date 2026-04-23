@@ -1,81 +1,27 @@
-import { Link } from "react-router-dom";
 import MainLayout from "../../layouts/main/MainLayout";
-import Button from "../../components/ui/Button";
-import TextField from "../../components/ui/TextField";
-import Chip from "../../components/ui/Chip";
-import Card from "../../components/ui/Card";
-import Divider from "../../components/ui/Divider";
-import Loader from "../../components/ui/Loader";
-import Switch from "../../components/ui/Switch";
-import Badge from "../../components/ui/Badge";
-import { useState } from "react";
+import PostCard from "../../components/PostCard";
 
 const HomePage = () => {
-  const [switchOn, setSwitchOn] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [chipVisible, setChipVisible] = useState(true);
-
-  const posts = [
-    {
-      slug: "makeup-trends",
-      title: "Makeup Trends 2025",
-      excerpt: "Огляд трендів макіяжу...",
-    },
-    {
-      slug: "skincare",
-      title: "Skincare Guide",
-      excerpt: "Як правильно доглядати за шкірою...",
-    },
-  ];
+  const posts = Array.from({ length: 10 }).map((_, i) => ({
+    slug: `post-${i + 1}`,
+    title: `Post Title ${i + 1}`,
+    excerpt: `Це короткий опис для поста номер ${i + 1}.`,
+    author: `Автор ${i + 1}`,
+  }));
 
   return (
     <MainLayout>
-      <div className="max-w-3xl mx-auto p-4">
-        <h1 className="text-4xl font-extrabold mb-8 text-primary text-center drop-shadow dark:text-primary">Блог візажиста</h1>
-        <Card className="mb-8">
-          <h2 className="text-xl font-bold mb-4 text-primary">UI Components Showcase</h2>
-          <div className="flex flex-wrap gap-4 mb-4">
-            <Button>Primary</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button disabled>Disabled</Button>
-          </div>
-          <div className="flex flex-wrap gap-4 mb-4">
-            <TextField label="Text Field" value={inputValue} onChange={e => setInputValue(e.target.value)} placeholder="Введіть текст..." />
-            <TextField label="З помилкою" error="Помилка" />
-          </div>
-          <div className="flex flex-wrap gap-4 mb-4 items-center">
-            {chipVisible && <Chip label="Chip Accent" color="accent" onDelete={() => setChipVisible(false)} />}
-            <Chip label="Chip Success" color="success" />
-            <Chip label="Chip Error" color="error" />
-          </div>
-          <div className="flex flex-wrap gap-4 mb-4 items-center">
-            <Badge color="accent">Accent</Badge>
-            <Badge color="success">Success</Badge>
-            <Badge color="error">Error</Badge>
-          </div>
-          <div className="flex flex-wrap gap-4 mb-4 items-center">
-            <Switch checked={switchOn} onChange={setSwitchOn} label={switchOn ? "Увімкнено" : "Вимкнено"} />
-          </div>
-          <div className="flex flex-wrap gap-4 mb-4 items-center">
-            <Loader />
-          </div>
-          <Divider />
-        </Card>
-        <div className="space-y-6">
+      <div className="max-w-6xl mx-auto p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div
+            <PostCard
               key={post.slug}
-              className="p-6 bg-surface border border-border rounded-2xl shadow-lg transition-transform hover:scale-[1.02] dark:bg-surface-dark dark:border-border-dark"
-            >
-              <Link
-                to={`/post/${post.slug}`}
-                className="text-2xl font-bold text-primary hover:text-primary-hover transition-colors duration-200 dark:text-primary dark:hover:text-primary-light"
-              >
-                {post.title}
-              </Link>
-              <p className="text-text-muted mt-2 dark:text-text-muted-dark">{post.excerpt}</p>
-            </div>
+              title={post.title}
+              excerpt={post.excerpt}
+              author={post.author}
+              href={`/post/${post.slug}`}
+              imageUrl="https://picsum.photos/200/300"
+            />
           ))}
         </div>
       </div>
