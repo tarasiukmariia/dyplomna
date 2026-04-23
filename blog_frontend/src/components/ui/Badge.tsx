@@ -7,7 +7,7 @@ interface BadgeProps {
 }
 
 const colorMap = {
-  accent: 'bg-[#b87333] text-white',
+  accent: 'bg-accent text-white',
   success: 'bg-green-500 text-white',
   error: 'bg-red-500 text-white',
   default: 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100',

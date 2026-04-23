@@ -1,6 +1,22 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  /* --color-accent-light: #b87333;
+  --color-accent-light-hover: #a05a2c;
+  --color-accent-light-soft: #cd7f32;
+  --color-accent-light-bg: #fff;
+  --color-accent-dark: #b87333;
+  --color-accent-dark-hover: #cd7f32;
+  --color-accent-dark-soft: #b8733320;
+  --color-accent-dark-bg: #23272a;
 
+  // old */
+  --color-accent: #b87333;
+  --color-accent-hover: #a05a2c;
+  --color-accent-light: #cd7f32;
+  --color-accent-hover-light: #b8733320;
+  --color-surface-dark: #23272a;
+}
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   margin: 0;

@@ -10,13 +10,13 @@ const base =
 
 const variants = {
   primary:
-    'bg-[#b87333] text-white hover:bg-[#a05a2c] focus:ring-[#b87333] dark:bg-[#b87333] dark:hover:bg-[#cd7f32] dark:focus:ring-[#b87333]',
+    'bg-accent text-white hover:bg-accent-hover focus:ring-accent dark:bg-accent dark:hover:bg-accent-light dark:focus:ring-accent',
   secondary:
-    'bg-gray-200 text-[#b87333] hover:bg-gray-300 focus:ring-[#b87333] dark:bg-gray-700 dark:text-[#b87333] dark:hover:bg-gray-600',
+    'bg-gray-200 text-accent hover:bg-gray-300 focus:ring-accent dark:bg-gray-700 dark:text-accent dark:hover:bg-gray-600',
   outline:
-    'border border-[#b87333] text-[#b87333] bg-transparent hover:bg-[#b87333] hover:text-white focus:ring-[#b87333] dark:border-[#b87333] dark:text-[#b87333] dark:hover:bg-[#b87333] dark:hover:text-white',
+    'border border-accent text-accent bg-transparent hover:bg-accent hover:text-white focus:ring-accent dark:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-white',
   ghost:
-    'bg-transparent text-[#b87333] hover:bg-[#b8733320] focus:ring-[#b87333] dark:text-[#b87333] dark:hover:bg-[#b8733320]'
+    'bg-transparent text-accent hover:bg-accent-hover-light focus:ring-accent dark:text-accent dark:hover:bg-accent-hover-light'
 };
 
 const Button: React.FC<ButtonProps> = ({ variant = 'primary', children, className = '', disabled, ...props }) => (

@@ -31,10 +31,9 @@ const HomePage = () => {
   return (
     <MainLayout>
       <div className="max-w-3xl mx-auto p-4">
-        <h1 className="text-4xl font-extrabold mb-8 text-[#b87333] text-center drop-shadow dark:text-[#b87333]">Блог візажиста</h1>
-        {/* UI Showcase */}
+        <h1 className="text-4xl font-extrabold mb-8 text-accent text-center drop-shadow dark:text-accent">Блог візажиста</h1>
         <Card className="mb-8">
-          <h2 className="text-xl font-bold mb-4 text-[#b87333]">UI Components Showcase</h2>
+          <h2 className="text-xl font-bold mb-4 text-accent">UI Components Showcase</h2>
           <div className="flex flex-wrap gap-4 mb-4">
             <Button>Primary</Button>
             <Button variant="secondary">Secondary</Button>
@@ -66,16 +65,15 @@ const HomePage = () => {
           </div>
           <Divider />
         </Card>
-        {/* Existing posts */}
         <div className="space-y-6">
           {posts.map((post) => (
             <div
               key={post.slug}
-              className="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-lg transition-transform hover:scale-[1.02] dark:bg-[#23272a] dark:border-[#b87333]"
+              className="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-lg transition-transform hover:scale-[1.02] dark:bg-surface-dark dark:border-accent"
             >
               <Link
                 to={`/post/${post.slug}`}
-                className="text-2xl font-bold text-[#b87333] hover:text-[#a05a2c] transition-colors duration-200 dark:text-[#b87333] dark:hover:text-[#cd7f32]"
+                className="text-2xl font-bold text-accent hover:text-accent-hover transition-colors duration-200 dark:text-accent dark:hover:text-accent-light"
               >
                 {post.title}
               </Link>

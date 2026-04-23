@@ -8,7 +8,7 @@ interface ChipProps {
 
 const colorMap = {
   default: 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100',
-  accent: 'bg-[#b87333] text-white dark:bg-[#b87333] dark:text-white',
+  accent: 'bg-accent text-white dark:bg-accent dark:text-white',
   success: 'bg-green-500 text-white',
   error: 'bg-red-500 text-white',
 };
