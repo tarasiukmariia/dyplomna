@@ -10,11 +10,11 @@ const base =
 
 const variants = {
   primary:
-    "bg-primary text-text-light hover:bg-primary-hover focus:ring-primary dark:bg-primary dark:hover:bg-primary-light dark:focus:ring-primary",
+    "bg-primary text-text-light focus:ring-primary dark:bg-primary dark:focus:ring-primary",
   outline:
-    "border border-primary text-primary bg-transparent hover:bg-primary hover:text-text-light focus:ring-primary dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-text-light",
+    "border border-primary text-primary bg-transparent focus:ring-primary dark:border-primary dark:text-primary",
   ghost:
-    "bg-transparent text-primary hover:bg-primary-hover-light focus:ring-primary dark:text-primary dark:hover:bg-primary-hover-light",
+    "bg-transparent text-primary focus:ring-primary dark:text-primary",
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,14 +26,32 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={
-      `${base} ${variants[variant]} ${className} ` +
+      `${base} ${variants[variant]} relative overflow-hidden group ${className} ` +
       (disabled ? "opacity-60" : "cursor-pointer")
     }
     disabled={disabled}
     style={{ outline: "none", boxShadow: "none" }}
     {...props}
   >
-    {children}
+    {/* Animated background for primary/outline, animated border for ghost */}
+    {variant === "ghost" ? (
+      <span
+        className="absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full transition-all duration-500 z-0 bg-primary"
+        style={{ transitionProperty: 'width' }}
+      />
+    ) : (
+      <span
+        className={`absolute left-0 top-0 h-full w-0 group-hover:w-full transition-all duration-500 z-0 ${
+          variant === "primary"
+            ? "bg-primary-hover"
+            : variant === "outline"
+            ? "bg-primary"
+            : ""
+        }`}
+        style={{ transitionProperty: 'width' }}
+      />
+    )}
+    <span className="relative z-10">{children}</span>
   </button>
 );
 

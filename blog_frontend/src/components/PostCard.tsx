@@ -17,8 +17,12 @@ const PostCard: React.FC<PostCardProps> = ({ title, excerpt, author, href, class
   return (
     <Wrapper
       {...wrapperProps}
-      className={`block p-6 bg-surface shadow-xl transition-transform hover:scale-[1.03] hover:shadow-2xl dark:bg-surface-dark ${className}`}
-      style={{ borderRadius: '8px', ...(href ? { textDecoration: 'none' } : {}) }}
+      className={`block p-6 bg-surface shadow-sm transition-transform hover:shadow-md dark:bg-surface-dark dark:shadow-[0_1px_6px_0_rgba(164,143,122,0.10)] dark:hover:shadow-[0_2px_12px_0_rgba(164,143,122,0.15)] border border-transparent hover:border-primary dark:hover:border-primary ${className}`}
+      style={{
+        borderRadius: '8px',
+        transition: 'box-shadow 0.3s cubic-bezier(.4,0,.2,1), border-color 0.3s cubic-bezier(.4,0,.2,1)',
+        ...(href ? { textDecoration: 'none' } : {})
+      }}
     >
       {imageUrl && (
         <img
@@ -32,7 +36,7 @@ const PostCard: React.FC<PostCardProps> = ({ title, excerpt, author, href, class
       <p className="text-text-muted dark:text-text-muted-dark mb-4">{excerpt}</p>
       <div className="flex gap-3 mt-2">
         <Button>Читати</Button>
-        <Button variant="outline">Зберегти</Button>
+        <Button variant="outline" className="hover:text-text-light">Зберегти</Button>
       </div>
     </Wrapper>
   );
